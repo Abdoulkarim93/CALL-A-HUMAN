@@ -1,0 +1,9 @@
+
+{
+  "name": "CALL A HUMAN - Physical Intelligence Engine",
+  "description": "A hyper-intuitive AI architect for physical human services. CALL A HUMAN deconstructs complex physical tasks and deploys verified human assets.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation"
+  ]
+}

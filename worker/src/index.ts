@@ -26,6 +26,10 @@ export default {
     };
 
     try {
+      if (url.pathname === "/" || url.pathname === "") {
+        return new Response(JSON.stringify({ message: "Welcome to CALL A HUMAN API" }), { headers: corsHeaders });
+      }
+
       if (url.pathname === "/api/access") {
         await sendTelegramMessage(env, "🚀 Site Accessed!");
         return new Response(JSON.stringify({ success: true }), { headers: corsHeaders });

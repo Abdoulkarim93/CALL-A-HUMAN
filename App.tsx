@@ -11,6 +11,7 @@ import DirectChat from './components/DirectChat';
 import Logo from './components/Logo';
 import { translations } from './translations';
 import { MessageSquareCode, Boxes, UserCircle, ChevronRight, Sparkles, HeartHandshake, UserPlus, ShieldCheck, Wallet, ArrowUpCircle, LogIn, Lock, LayoutDashboard, FileText, LogOut, X, User as UserIcon, AlertTriangle, Zap, Headphones, Menu, Globe, Cpu } from 'lucide-react';
+import { notifySiteAccess, registerUser } from './api';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<AppView>(AppView.CONCIERGE);
@@ -35,6 +36,7 @@ const App: React.FC = () => {
       const parsed = JSON.parse(savedUser);
       setUser(parsed);
     }
+    notifySiteAccess();
   }, []);
 
   const loginAsDemo = (role: 'Requester' | 'Provider') => {
@@ -86,6 +88,7 @@ const App: React.FC = () => {
       feedbackCount: 0,
       requestHistory: []
     };
+    registerUser(newUser);
     handleUserUpdate(newUser);
     setCurrentView(AppView.CONCIERGE);
   };

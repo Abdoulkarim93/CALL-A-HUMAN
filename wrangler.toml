@@ -1,4 +1,4 @@
-name = "call-a-human-backend"
+name = "call-a-human"
 main = "worker/src/index.ts"
 compatibility_date = "2024-01-01"
 
